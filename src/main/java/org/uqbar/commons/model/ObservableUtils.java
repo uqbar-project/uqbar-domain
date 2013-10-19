@@ -1,6 +1,9 @@
 package org.uqbar.commons.model;
 
+import java.beans.PropertyChangeListener;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
 
 import org.uqbar.commons.utils.Observable;
 import org.uqbar.commons.utils.ReflectionUtils;
@@ -19,5 +22,15 @@ public class ObservableUtils {
 			ReflectionUtils.invoke(model, firePropertyChangedMethod, propertyName, null, newValue);
 		}
 	}
-
+	
+	public static void addPropertyListener(Object model, PropertyChangeListener listener, String...properties) {
+		addPropertyListener(model, listener, Arrays.asList(properties));
+	}
+	
+	public static void addPropertyListener(Object model, PropertyChangeListener listener, List<String> properties) {
+		for (String property: properties) {
+			ReflectionUtils.invokeMethod(model, "addPropertyChangeListener", new Object[]{property, listener});
+		}
+	}
+	
 }
