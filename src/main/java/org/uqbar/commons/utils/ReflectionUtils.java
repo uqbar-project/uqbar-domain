@@ -11,10 +11,10 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.collections15.CollectionUtils;
 import org.apache.commons.collections15.Predicate;
 import org.apache.commons.lang.StringUtils;
+import org.uqbar.commons.model.ScalaBeanInfo;
 
 
 public class ReflectionUtils {
@@ -213,7 +213,7 @@ public class ReflectionUtils {
 	
 	public static PropertyDescriptor getPropertyDescriptor(Object object, String property) {
 		try {
-			PropertyDescriptor propertyDescriptor = PropertyUtils.getPropertyDescriptor(object, property);
+			PropertyDescriptor propertyDescriptor = ScalaBeanInfo.getPropertyDescriptor(object, property);
 			if (propertyDescriptor == null) {
 				throw new RuntimeException("No se encuentra un property descriptor para la propiedad " + property
 					+ " en un objeto de la clase " + object.getClass());
@@ -223,19 +223,6 @@ public class ReflectionUtils {
 		catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException("Se intentó acceder a la propiedad " + property
 				+ " de un objeto, pero el objeto recibido era nulo.", e);
-		}
-		catch (IllegalAccessException e) {
-			throw new RuntimeException("No se tiene acceso a la propiedad " + property + " de un objeto de tipo "
-				+ object.getClass().getSimpleName() + ". Verifique que la propiedad tenga un getter / setter público.",
-				e);
-		}
-		catch (InvocationTargetException e) {
-			throw new RuntimeException("Al acceder a la propiedad " + property + " de un objeto de tipo "
-				+ object.getClass().getSimpleName() + ", el método setter o getter tiró una excepción.", e);
-		}
-		catch (NoSuchMethodException e) {
-			throw new RuntimeException("No se encotró el setter o getter correspondiente a la propiedad " + property
-				+ " + " + "en un objeto de tipo " + object.getClass().getSimpleName(), e);
 		}
 	}
 	
