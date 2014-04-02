@@ -15,7 +15,7 @@ import org.apache.commons.beanutils.PropertyUtils;
  * @author npasserini
  * @author jfernandes
  */
-public class ObservableObject{
+public class ObservableObject {
 	private transient PropertyChangeSupport changeSupport;
 
 	public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener) {
@@ -132,8 +132,6 @@ public class ObservableObject{
 				+ " + " + "en un objeto de tipo " + object.getClass().getSimpleName(), e);
 		}
 	}
-
-
 
 	// ********************************************************
 	// ** Accessors

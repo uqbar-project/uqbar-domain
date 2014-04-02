@@ -7,6 +7,10 @@ import java.lang.reflect.Method;
 
 import org.apache.commons.beanutils.PropertyUtils;
 
+/**
+ * @deprecated Esto no se usa mas. Ahora con aspectos no hace falta heredar de ningun lado
+ */
+@Deprecated
 public class Model<T> implements IModel<T> {
 	private T target;
 
