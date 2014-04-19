@@ -7,8 +7,8 @@
 
 	<parent>
 		<groupId>org.uqbar-project</groupId>
-		<artifactId>uqbar-parent-project</artifactId>
-		<version>1.7</version>
+		<artifactId>uqbar-scala-parent</artifactId>
+		<version>1.1-SNAPSHOT</version>
 	</parent>
 
 	<scm>

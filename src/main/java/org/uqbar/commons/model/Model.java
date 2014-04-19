@@ -6,9 +6,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.uqbar.commons.utils.ReflectionUtils;
 
 /**
- * @deprecated Esto no se usa mas. Ahora con aspectos no hace falta heredar de ningun lado
+ * @deprecated Este model la verdad que no me cierra ni un poco. Ver Panel#bindContentsTo.
+ * Ademas en la nueva version de arena con aspectos no hace falta heredar de aca.
  */
 @Deprecated
 public class Model<T> implements IModel<T> {
@@ -61,7 +63,8 @@ public class Model<T> implements IModel<T> {
 	}
 	
 	public Object getProperty(String property) {
-		return getPropertyValue(target, property);
+		return ReflectionUtils.invokeGetter(this.target, property);
+//		return getPropertyValue(target, property);
 	}
 
 	public static Object getPropertyValue(Object object, String property) {
@@ -84,11 +87,6 @@ public class Model<T> implements IModel<T> {
 			throw new RuntimeException("Cannot find getter method for the property with name '" + property
 				+ "' in an object of type '" + object.getClass().getSimpleName() + "'", e);
 		}
-	}
-
-	@Override
-	public Method getGetter(String property) {
-		return getPropertyDescriptor(target, property).getReadMethod();
 	}
 
 	protected Method getSetter(String property) {
