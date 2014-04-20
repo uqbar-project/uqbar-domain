@@ -260,13 +260,20 @@ public class ReflectionUtils {
 	
 	public static <T> T newInstanceForName(String className){
 		try {
-			return (T) Class.forName(className).newInstance();
+			return newInstance(Class.forName(className));
+		}
+		catch (ClassNotFoundException e) {
+			throw new RuntimeException("No existe la clase: " + className, e);
+		}
+	}
+
+	public static <T> T newInstance(Class<?> clazz) {
+		try {
+			return (T) clazz.newInstance();
 		} catch (InstantiationException e) {
-			throw new RuntimeException("No se pudo instanciar la clase: " + className, e);
+			throw new RuntimeException("No se pudo instanciar la clase: " + clazz, e);
 		} catch (IllegalAccessException e) {
 			throw new RuntimeException(e);
-		} catch (ClassNotFoundException e) {
-			throw new RuntimeException("No existe la clase: " + className, e);
 		}
 	}
 	
