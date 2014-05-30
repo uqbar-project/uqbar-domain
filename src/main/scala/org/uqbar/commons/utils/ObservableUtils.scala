@@ -22,7 +22,8 @@ case class FireChange(val property:String, val change:Change){
   def of(obj:Any) {
     ObservableUtils.addPropertyListener(change.when.obj, new PropertyChangeListener(){
     	def propertyChange(evt:PropertyChangeEvent){
-    	   ObservableUtils.firePropertyChanged(obj, property, ReflectionUtils.readField(obj, property)); 
+    	   val fieldValue = ReflectionUtils.readField(obj, property)
+    	   if(fieldValue != null)  ObservableUtils.firePropertyChanged(obj, property, fieldValue); 
     	}
     }, change.properties)
   }

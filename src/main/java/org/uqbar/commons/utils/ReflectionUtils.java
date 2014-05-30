@@ -106,7 +106,7 @@ public class ReflectionUtils {
 		ArrayList<Field> fields = new ArrayList<Field>();
 		Class<? extends Object> cls = object.getClass();
 		
-		while (cls != null) {
+		while (cls != null && cls != Object.class) {
 			CollectionUtils.addAll(fields, cls.getDeclaredFields());
 			cls = cls.getSuperclass();
 		}
