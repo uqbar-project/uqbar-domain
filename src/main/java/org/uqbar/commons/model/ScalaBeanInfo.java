@@ -162,8 +162,12 @@ public class ScalaBeanInfo implements BeanInfo {
 	}
 	
 	public PropertyDescriptor getPropertyDescriptor(String property){
+		String propertyName = property;
+		if(property.startsWith("_")){
+			propertyName = propertyName.substring(1);
+		}
 		for (PropertyDescriptor descriptor : this.propertyDescriptors) {
-			if(descriptor.getName().equals(property)){
+			if(descriptor.getName().equals(propertyName)){
 				return descriptor; 
 			}
 		}
