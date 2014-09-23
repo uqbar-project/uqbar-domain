@@ -14,9 +14,24 @@ import org.uqbar.commons.utils.ReflectionUtils;
  * triggering a property change method.
  *
  * @author jfernandes
+ * @author flbulgarelli
  */
 public class ObservableUtils {
 
+	/**
+	 * Set ups one or more dependencies for the given <code>property</code> in
+	 * the given <code>model</code>. That is, the property <code>property</code>
+	 * will fire a <code>propertyChanged</code> event whenever any of the
+	 * <code>dependencies</code> get updated.
+	 * 
+	 * @since 3.4
+	 * @param model
+	 *            the model with the given properties
+	 * @param property
+	 *            the property to which dependencies will be added
+	 * @param dependencies
+	 *            the the dependencies to be added to the given property
+	 */
 	public static void dependencyOf(final Object model, final String property, String... dependencies) {
 		addPropertyListener(model, new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent evt) {

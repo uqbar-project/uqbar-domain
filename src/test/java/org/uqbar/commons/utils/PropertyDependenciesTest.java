@@ -13,6 +13,9 @@ import org.hamcrest.CustomMatcher;
 import org.junit.Test;
 import org.uqbar.commons.model.ObservableUtils;
 
+/**
+ * @author flbulgarelli
+ */
 public class PropertyDependenciesTest {
 
 	@Test(expected = RuntimeException.class)
@@ -21,7 +24,7 @@ public class PropertyDependenciesTest {
 	}
 
 	@Test
-	// TODO esto es correcto?
+	// TODO es esto correcto?
 	public void noHaceNadaSiElObjetoNoEsObservable() {
 		ObservableUtils.firePropertyChanged(new UnobservableSample(), "baz");
 	}
