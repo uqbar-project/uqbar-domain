@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/faloi/uqbar-domain-mirror.svg)](https://travis-ci.org/faloi/uqbar-domain-mirror)
 # README #
 
 This README would normally document whatever steps are necessary to get your application up and running.
