@@ -21,6 +21,18 @@ public abstract class CollectionBasedHome<T extends Entity> extends AbstractAuto
 	private List<T> objects = new ArrayList<T>();
 
 	// ********************************************************
+	// ** Getters y setters de objects para respetar el contrato Java Bean
+	// ********************************************************
+
+	List<T> getObjects() {
+		return objects;
+	}
+
+	void setObjects(List<T> objects) {
+		this.objects = objects;
+	}
+	
+	// ********************************************************
 	// ** Altas, bajas y modificaciones.
 	// ********************************************************
 
