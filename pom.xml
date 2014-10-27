@@ -33,7 +33,6 @@
 			<groupId>net.sourceforge.collections</groupId>
 			<artifactId>collections-generic</artifactId>
 			<version>4.01</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
@@ -64,8 +63,5 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
-	</build>
 
 </project>
