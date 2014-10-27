@@ -17,7 +17,6 @@ import java.util.List;
  * aquí es donde "viven".
  * Si quiero buscar una instancia voy a poder hacerlo a través de su Home correspondiente.
  * 
- * @see Videoclub
  * @see CollectionBasedHome
  * 
  * @author npasserini
