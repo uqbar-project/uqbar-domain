@@ -11,10 +11,14 @@
 		<groupId>org.uqbar-project</groupId>
 	</parent>
 
+	<properties>
+		<scm.gitRepository></scm.gitRepository>
+	</properties>
+
 	<scm>
-		<connection>scm:hg:${scm.hgServer}/${project.artifactId}</connection>
-		<developerConnection>scm:hg:${scm.hgServer}/${project.artifactId}</developerConnection>
-		<url>scm:hg:${scm.hgServer}/${project.artifactId}</url>
+		<connection>${scm.gitServer}/${scm.gitRepository}</connection>
+		<developerConnection>${scm.gitServer}/${scm.gitRepository}</developerConnection>
+		<url>${scm.gitServer}/${scm.gitRepository}</url>
 	</scm>
 
 	<build>
