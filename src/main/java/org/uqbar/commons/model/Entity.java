@@ -38,6 +38,9 @@ public abstract class Entity implements Serializable {
 	@Override
 	public boolean equals(Object obj) {
 		try {
+			if (obj == null) {
+				return false;
+			}
 			Entity otherEntity = (Entity) obj;
 			if (this.id == null || otherEntity.getId() == null) {
 				return super.equals(obj);
