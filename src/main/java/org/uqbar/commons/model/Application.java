@@ -10,8 +10,8 @@ package org.uqbar.commons.model;
 public interface Application {
 
 	/**
-	 * Returns the appropriated home for the given entity type.
+	 * Returns the appropriated repo for the given entity type.
 	 */
-	public <T extends Entity> Home<T> getHome(Class<? extends T> type);
+	public <T extends Entity> Repo<T> getRepo(Class<? extends T> type);
 	
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import org.uqbar.commons.utils.TransactionalAndObservable;
 
 /**
- * Default implementation of a {@link Search}, delegating into a {@link Home} object and performing a search
+ * Default implementation of a {@link Search}, delegating into a {@link Repo} object and performing a search
  * by example.
  * 
  * @author npasserini
@@ -17,16 +17,16 @@ public class SearchByExample<T extends Entity> extends Search<T> {
 	public static final String EXAMPLE = "example";
 
 	private T example;
-	private Home<T> home;
+	private Repo<T> repo;
 
 	/**
 	 * Straightforward constructor.
 	 * 
-	 * @param home The home into which we will delegate our searches.
+	 * @param repo The repo into which we will delegate our searches.
 	 */
-	public SearchByExample(Home<T> home) {
-		super(home.getEntityType());
-		this.home = home;
+	public SearchByExample(Repo<T> repo) {
+		super(repo.getEntityType());
+		this.repo = repo;
 
 		init();
 	}
@@ -50,17 +50,17 @@ public class SearchByExample<T extends Entity> extends Search<T> {
 	}
 
 	protected void createExampleObject() {
-		this.example = this.home.createExample();
+		this.example = this.repo.createExample();
 	}
 
 	@Override
 	protected List<T> doSearch() {
-		return this.home.searchByExample(this.example);
+		return this.repo.searchByExample(this.example);
 	}
 
 	@Override
 	public void removeSelected() {
-		this.home.delete(this.getSelected());
+		this.repo.delete(this.getSelected());
 		this.search();
 	}
 

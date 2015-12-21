@@ -3,6 +3,9 @@ package org.uqbar.commons.utils;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.uqbar.commons.model.Entity;
+import org.uqbar.commons.model.Repo;
+
 /**
  * El contexto de la aplicación.
  */
@@ -47,20 +50,16 @@ public class ApplicationContext {
 	}
 
 	// ********************************************************
-	// ** Homes
+	// ** Repos
 	// ********************************************************
 
-	public <T> Home<T> getHome(Class<T> type) {
+	public <T> Repo<? extends Entity> getRepo(Class<T> type) {
 		return this.internalGetSingleton(type, //
-			"No existe una home registrada para la clase: " + type.getSimpleName());
+			"No existe un repo registrado para la clase: " + type.getSimpleName());
 	}
 
-	public <T> void configureHome(Class<T> type, Home<T> home) {
-		this.singletons.put(type, home);
-	}
-
-	public <T> void configureHome(Class<T> type) {
-		this.configureHome(type, new Home<T>(type));
+	public <T> void configureRepo(Class<T> type, Repo<? extends Entity> repo) {
+		this.singletons.put(type, repo);
 	}
 
 	// ********************************************************

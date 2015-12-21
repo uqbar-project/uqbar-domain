@@ -30,7 +30,7 @@ public class PropertyDependenciesTest {
 	}
 
 	@Test
-	public void notificaSiLaProiedadExisteConElValorActual() {
+	public void notificaSiLaPropiedadExisteConElValorActual() {
 		PropertyChangeListener listener = mock(PropertyChangeListener.class);
 		ObservableSample sample = new ObservableSample(10);
 		sample.addPropertyChangeListener("bar", listener);

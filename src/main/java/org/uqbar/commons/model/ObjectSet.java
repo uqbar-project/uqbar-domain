@@ -13,7 +13,7 @@ public class ObjectSet {
 
 	public void execute(Application application) {
 		for (Entity entity : this.createSimpleObjects()) {
-			application.getHome(entity.getClass()).create(entity);
+			application.getRepo(entity.getClass()).create(entity);
 		} 
 	}
 

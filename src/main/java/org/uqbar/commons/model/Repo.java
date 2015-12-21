@@ -3,7 +3,7 @@ package org.uqbar.commons.model;
 import java.util.List;
 
 /**
- * Una home representa la interfaz hacia el lugar físico donde se persisten los objetos.
+ * Un repo representa la interfaz hacia el lugar físico donde se persisten los objetos.
  * Está asociada a un tipo de objeto dado (a una clase), y permite realizar operaciones
  * sobre ese tipo de objetos.
  * 
@@ -13,15 +13,18 @@ import java.util.List;
  * Permite desacoplar al dominio de la lógica propia de la tecnología de la persistencia y de la manera en que 
  * se persiste: archivo, base de datos relacional, xml, etc.
  * 
- * El termino Home proviene de la idea de que es el "hogar" de cierto tipo de objetos, y que
- * aquí es donde "viven".
- * Si quiero buscar una instancia voy a poder hacerlo a través de su Home correspondiente.
+ * Antiguamente se le daba el término "Home" que proviene de la idea de 
+ * que es el "hogar" de cierto tipo de objetos, y que
+ * aquí es donde "viven". Actualmente se asocia la idea de un repositorio,
+ * o lugar de almacenamiento de dichos objetos. 
  * 
- * @see CollectionBasedHome
+ * Si quiero buscar una instancia voy a poder hacerlo a través de su Repo correspondiente.
+ * 
+ * @see CollectionBasedRepo
  * 
  * @author npasserini
  */
-public interface Home<T extends Entity> {
+public interface Repo<T extends Entity> {
 	
 	// ********************************************************
 	// ** Información administrativa
