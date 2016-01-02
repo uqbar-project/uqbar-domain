@@ -1,5 +1,8 @@
 package org.uqbar.commons.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * An object set executes a given persistence-initialization logic
  * on an {@link Application} object.
@@ -9,16 +12,17 @@ package org.uqbar.commons.model;
  * 
  * @author jfernandes
  */
-public class ObjectSet {
+public class ObjectSet<T extends Entity> {
 
 	public void execute(Application application) {
-		for (Entity entity : this.createSimpleObjects()) {
-			application.getRepo(entity.getClass()).create(entity);
-		} 
+		for (T entity : this.createSimpleObjects()) {
+			Repo<T> repoT = (Repo<T>) application.getRepo(entity.getClass());
+			repoT.create(entity);
+		}
 	}
 
-	protected Entity[] createSimpleObjects() {
-		return new Entity[] {};
+	protected List<T> createSimpleObjects() {
+		return new ArrayList<T>();
 	}
 	
 }
