@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uqbar-domain</artifactId>
 	<packaging>jar</packaging>
@@ -18,8 +19,8 @@
 		<connection>${scm.gitServer}/${scm.gitRepository}</connection>
 		<developerConnection>${scm.gitServer}/${scm.gitRepository}</developerConnection>
 		<url>${scm.gitServer}/${scm.gitRepository}</url>
-	  <tag>uqbar-domain-3.5.1</tag>
-  </scm>
+		<tag>uqbar-domain-3.5.1</tag>
+	</scm>
 
 	<build>
 		<plugins>
@@ -31,7 +32,9 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-						<plugin>
+
+			<!-- code coverage -->
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.7.5.201505241946</version>
@@ -55,6 +58,24 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>3.0.1</version>
+
+				<configuration>
+					<coberturaReports>
+						<coberturaReport>
+							${basedir}/target/coverage.xml
+						</coberturaReport>
+					</coberturaReports>
+					<sourceEncoding>UTF-8</sourceEncoding>
+					<serviceName>travis-ci</serviceName>
+					<serviceJobId>${env.TRAVIS_JOB_ID} </serviceJobId>
+				</configuration>
+			</plugin>
+			<!--  code coverage -->
+			
 		</plugins>
 		<pluginManagement>
 			<plugins>
