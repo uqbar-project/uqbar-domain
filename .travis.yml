@@ -12,8 +12,7 @@ before_install:
 - mv settings.xml ~/.m2/settings.xml
 
 script: 
-- export PROFILES="uploadRepo,uploadProducts"; export UPDATE_SITE="dev" 
-- mvn -DupdateSiteFolder=$UPDATE_SITE -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID clean install jacoco:report coveralls:report -P $PROFILES -X
+- mvn -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID clean install jacoco:report coveralls:report
 
 notifications:
   email:
