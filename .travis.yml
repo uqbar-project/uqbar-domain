@@ -13,7 +13,7 @@ before_install:
 
 script: 
 - export PROFILES=normalProfile
-- mvn -DupdateSiteFolder=$UPDATE_SITE -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID clean install jacoco:report coveralls:report -P $PROFILES
+- mvn -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID clean install jacoco:report coveralls:report 
 
 notifications:
   email:
