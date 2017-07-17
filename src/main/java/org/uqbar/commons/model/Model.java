@@ -6,11 +6,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import org.apache.commons.beanutils.PropertyUtils;
-import org.uqbar.commons.utils.ReflectionUtils;
+import org.uqbar.commons.model.utils.ReflectionUtils;
+import org.uqbar.commons.model.utils.ScalaBeanInfo;
 
 /**
- * @deprecated Este model la verdad que no me cierra ni un poco. Ver Panel#bindContentsTo.
- * Ademas en la nueva version de arena con aspectos no hace falta heredar de aca.
+ * @deprecated Este model la verdad que no me cierra ni un poco. 
+ * Ver Panel#bindContentsTo.
+ * Ademas en la nueva version de arena con aspectos no hace falta 
+ * heredar de aca.
  */
 @Deprecated
 public class Model<T> implements IModel<T> {

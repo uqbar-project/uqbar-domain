@@ -1,4 +1,4 @@
-package org.uqbar.commons.utils;
+package org.uqbar.commons.model.utils;
 
 import java.beans.PropertyDescriptor;
 import java.lang.annotation.Annotation;
@@ -14,9 +14,12 @@ import java.util.List;
 import org.apache.commons.collections15.CollectionUtils;
 import org.apache.commons.collections15.Predicate;
 import org.apache.commons.lang.StringUtils;
-import org.uqbar.commons.model.ScalaBeanInfo;
 
-
+/**
+ *
+ * Reflection helper methods
+ * 
+ */
 public class ReflectionUtils {
 
 	public static Object invokeMethod(Object model, String actionName) {

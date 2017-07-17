@@ -11,7 +11,7 @@ import java.beans.PropertyChangeListener;
 
 import org.hamcrest.CustomMatcher;
 import org.junit.Test;
-import org.uqbar.commons.model.ObservableUtils;
+import org.uqbar.commons.model.utils.ObservableUtils;
 
 /**
  * @author flbulgarelli

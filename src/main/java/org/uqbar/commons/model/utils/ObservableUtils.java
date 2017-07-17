@@ -1,4 +1,4 @@
-package org.uqbar.commons.model;
+package org.uqbar.commons.model.utils;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -6,8 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 
-import org.uqbar.commons.utils.Observable;
-import org.uqbar.commons.utils.ReflectionUtils;
+import org.uqbar.commons.model.annotations.Observable;
 
 /**
  * Utility class for {@link Observable} object functions, for example to force

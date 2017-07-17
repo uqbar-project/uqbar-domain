@@ -3,6 +3,8 @@ package org.uqbar.commons.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.uqbar.commons.model.application.Application;
+
 /**
  * An object set executes a given persistence-initialization logic
  * on an {@link Application} object.
@@ -12,6 +14,7 @@ import java.util.List;
  * 
  * @author jfernandes
  */
+@Deprecated
 public class ObjectSet<T extends Entity> {
 
 	public void execute(Application application) {

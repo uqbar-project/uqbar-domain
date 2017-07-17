@@ -3,6 +3,8 @@ package org.uqbar.commons.model;
 import java.beans.PropertyChangeListener;
 import java.util.Arrays;
 
+import org.uqbar.commons.model.utils.ObservableUtils;
+
 /**
  * The {@link Property} class reifies an observable property in a model.
  * 
@@ -62,7 +64,7 @@ public class Property {
 	 * DSL'ish constructor for a {@link Property}.
 	 * 
 	 * @param model
-	 *            the object this property belogns to
+	 *            the object this property belongs to
 	 * @param name
 	 *            the name of the property
 	 * @return a new {@link Property}
