@@ -1,4 +1,4 @@
-package org.uqbar.commons.utils;
+package org.uqbar.commons.model.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation para declarar que una clase va a ser observable
+ * Annotation to declare an observable class
  * 
  * @author nny
  *

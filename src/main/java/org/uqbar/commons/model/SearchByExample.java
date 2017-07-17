@@ -2,9 +2,14 @@ package org.uqbar.commons.model;
 
 import java.util.List;
 
-import org.uqbar.commons.utils.TransactionalAndObservable;
+import org.uqbar.commons.model.annotations.TransactionalAndObservable;
 
 /**
+ * Implementación de {@link Search}, que delega la responsabilidad de búsqueda en un
+ * {@link Repo} y hace una búsqueda a partir de un prototipo o example.
+ * 
+ * <hr>
+ * 
  * Default implementation of a {@link Search}, delegating into a {@link Repo} object and performing a search
  * by example.
  * 
@@ -14,6 +19,8 @@ import org.uqbar.commons.utils.TransactionalAndObservable;
  */
 @TransactionalAndObservable
 public class SearchByExample<T extends Entity> extends Search<T> {
+	private static final long serialVersionUID = -7306125107348477352L;
+
 	public static final String EXAMPLE = "example";
 
 	private T example;

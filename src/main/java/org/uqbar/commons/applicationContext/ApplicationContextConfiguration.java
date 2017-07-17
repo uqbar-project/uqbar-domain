@@ -1,4 +1,4 @@
-package org.uqbar.commons.utils;
+package org.uqbar.commons.applicationContext;
 
 public interface ApplicationContextConfiguration {
 

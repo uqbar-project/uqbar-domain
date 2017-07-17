@@ -3,8 +3,8 @@ package org.uqbar.commons.model;
 import java.util.List;
 
 /**
- * Un repo representa la interfaz hacia el lugar físico donde se persisten los objetos.
- * Está asociada a un tipo de objeto dado (a una clase), y permite realizar operaciones
+ * Un <b>repo</b> representa la interfaz hacia el lugar físico donde se persisten los objetos.
+ * Se asocia a un tipo de objeto dado (a una clase), y permite realizar operaciones
  * sobre ese tipo de objetos.
  * 
  * Estas operaciones relacionadas con la persistencia de los objetos.
@@ -20,6 +20,12 @@ import java.util.List;
  * 
  * Si quiero buscar una instancia voy a poder hacerlo a través de su Repo correspondiente.
  * 
+ * <hr>
+ * 
+ * <b>Repo</b> is an interface that communicates to objects persistence model (named T).
+ * You can perform several CRUD operations to this T objects: search (by id or passing an example or prototypical object).
+ * create, update or delete messages are some of them..
+ * 
  * @see CollectionBasedRepo
  * 
  * @author npasserini
@@ -27,13 +33,13 @@ import java.util.List;
 public interface Repo<T extends Entity> {
 	
 	// ********************************************************
-	// ** Información administrativa
+	// ** Administrative information - Info para el compilador
 	// ********************************************************
 	
 	public Class<T> getEntityType();
 	
 	// ********************************************************
-	// ** Search
+	// ** Search - Búsqueda
 	// ********************************************************
 	
 	public T searchById(int id);
@@ -44,9 +50,9 @@ public interface Repo<T extends Entity> {
 	
 	public List<T> allInstances();
 
-	// ********************************************************
-	// ** CRUD
-	// ********************************************************
+	// **************************************************************************
+	// ** CRUD Operations - Operaciones de Alta, Baja, Modificación y Consulta
+	// **************************************************************************
 	
 	public void create(T object);
 

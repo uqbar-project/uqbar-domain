@@ -5,15 +5,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.uqbar.commons.utils.TransactionalAndObservable;
+import org.uqbar.commons.model.annotations.TransactionalAndObservable;
 
 /**
+ * Clase base para implementar objetos cuya responsabilidad es realizar 
+ * una búsqueda de objetos de dominio. Para eso delega en las implementaciones
+ * verdaderas el método doSearch().
+ * 
+ * <hr>
+ * 
  * Base class for implementing search objects.
  * 
  * @param <T> The type of the objects to be searched.
  */
 @TransactionalAndObservable
 public abstract class Search<T>  implements Serializable {
+	private static final long serialVersionUID = -4824664309325850L;
+	
 	private static final Logger log = Logger.getLogger(Search.class);
 	public static final String RESULTS = "results";
 	public static final String SELECTED = "selected";

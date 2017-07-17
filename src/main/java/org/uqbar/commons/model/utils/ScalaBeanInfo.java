@@ -1,4 +1,4 @@
-package org.uqbar.commons.model;
+package org.uqbar.commons.model.utils;
 
 import java.awt.Image;
 import java.beans.BeanDescriptor;
@@ -15,7 +15,6 @@ import java.util.TreeMap;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.uqbar.commons.utils.ReflectionUtils;
 
 
 public class ScalaBeanInfo implements BeanInfo {

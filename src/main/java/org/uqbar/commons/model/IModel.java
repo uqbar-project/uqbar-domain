@@ -1,6 +1,5 @@
 package org.uqbar.commons.model;
 
-
 /**
  * 
  */

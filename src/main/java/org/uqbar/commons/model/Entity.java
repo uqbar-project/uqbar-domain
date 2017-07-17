@@ -3,6 +3,11 @@ package org.uqbar.commons.model;
 import java.io.Serializable;
 
 /**
+ * 
+ * Clase base para todos los objetos de dominio 
+ * 
+ * <hr>
+ * 
  * Base class for all domain objects.
  * 
  * @author npasserini
@@ -10,10 +15,8 @@ import java.io.Serializable;
  */
 public abstract class Entity implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 435983647238787181L;
 	private Integer id;
-	
 
 	public Integer getId() {
 		return this.id;
@@ -27,6 +30,7 @@ public abstract class Entity implements Serializable {
 		return this.id == null;
 	}
 	
+	/** hashCode based on id **/
 	@Override
 	public int hashCode() {
 		if (this.id == null) {
@@ -34,7 +38,8 @@ public abstract class Entity implements Serializable {
 		}
 		return this.id;
 	}
-	
+
+	/** Equality based on id **/
 	@Override
 	public boolean equals(Object obj) {
 		try {

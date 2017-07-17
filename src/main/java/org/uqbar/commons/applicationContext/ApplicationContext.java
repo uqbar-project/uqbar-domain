@@ -1,4 +1,4 @@
-package org.uqbar.commons.utils;
+package org.uqbar.commons.applicationContext;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,18 @@ import org.uqbar.commons.model.Entity;
 import org.uqbar.commons.model.Repo;
 
 /**
- * El contexto de la aplicación.
+ * Clase Singleton que permite almacenar y recuperar "well known instances", como
+ * repositorios y cualquier otro objeto singleton (componentes de envío de mails,
+ * simulación de impresoras, etc.). <br><br>
+ *  
+ * Implementa un Patrón arquitectural llamado <a href="https://en.wikipedia.org/wiki/Service_locator_pattern">Service Locator</a>
+ * 
+ * <hr> 
+ * 
+ * ApplicationContext is a Singleton class that allows to retrieve special 
+ * or "well known" instances, like repositories or any other singleton objects.
+ * It implements a <a href="https://en.wikipedia.org/wiki/Service_locator_pattern">Service Locator Architecture Pattern</a>
+ *  
  */
 public class ApplicationContext {
 	private static ApplicationContext instance = new ApplicationContext();
